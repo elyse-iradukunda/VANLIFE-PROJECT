@@ -2,9 +2,8 @@
 export default function Content(){
 
     return(
-    
         <>
-                   <div className="w-full">
+        <div className="w-full">
         <img 
           src="/car.png" 
           alt="Van at night" 
