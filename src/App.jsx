@@ -5,7 +5,6 @@ import About from './components/About'
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#FFF7ED] font-sans">
-      {/* 1. NAVIGATION BAR */}
       <nav className="flex justify-between items-center px-6 py-8 md:px-10">
         <Link className="font-black text-2xl tracking-tighter" to="/home">
           #VANLIFE
@@ -20,9 +19,7 @@ function App() {
         </div>
       </nav>
 
-      {/* 2. FULL-WIDTH HERO IMAGE */}
-      {/* This ensures the photo is the exact same size/width as the container */}
-      <div className="w-full">
+           <div className="w-full">
         <img 
           src="/car.png" 
           alt="Van at night" 
@@ -30,7 +27,6 @@ function App() {
         />
       </div>
 
-      {/* 3. MAIN CONTENT AREA */}
       <main className="flex-grow px-7 py-12 max-w-[600px] mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold leading-tight text-[#161616] mb-8">
           Don’t squeeze in a sedan when you could relax in a van.
@@ -49,7 +45,6 @@ function App() {
           </p>
         </div>
 
-        {/* 4. CALL TO ACTION BOX (The Orange Box) */}
         <div className="mt-14 bg-[#FFCC8D] p-9 rounded-md shadow-sm">
           <h2 className="text-2xl font-bold text-[#161616] mb-6 leading-tight">
             Your destination is waiting.<br />
@@ -61,12 +56,10 @@ function App() {
         </div>
       </main>
 
-      {/* 5. FOOTER */}
       <footer className="bg-[#252525] text-[#AAAAAA] py-7 text-center text-sm">
         &copy; 2022 #VANLIFE
       </footer>
 
-      {/* ROUTING LOGIC */}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
