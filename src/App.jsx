@@ -3,7 +3,8 @@ import Home from './components/Home'
 import About from './components/About'
 import Footer from './components/Footer'
 import Content from './components/Content'
-
+import "./server"
+import Vans from './components/vans'
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#FFF7ED] font-sans">
@@ -26,7 +27,8 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-      </Routes>
+        <Route path="/vans" element ={<Vans/>} />
+        </Routes>
     </div>
   )
 }
