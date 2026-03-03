@@ -6,6 +6,7 @@ import "./server"
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import Vans from './components/vans'
+import VanDetail from './components/VanDetail'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path='/about' element={<Content/>} />
                     <Route path="/home" element={<Home/>} />
                     <Route path="/vans" element ={<Vans/>} />
+                    <Route path="/vans/:id" element ={<VanDetail/>} />
 
               </Routes>
               <br />

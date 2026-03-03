@@ -13,12 +13,12 @@ export default function Vans() {
         <div key={van.id} className="text-[#161616]">
             <img 
                 src={van.imageUrl} 
-                className="w-full rounded-[5px]"
+                className="w-70 h-70 rounded-[5px]"
             />
 
-            <div className="mt-2">
-                <h3 className="font-semibold">{van.name}</h3>
-                <p className="font-medium">
+            <div className="mt-2 flex gap-10  justify-between">
+                <h3 className="font-bold text-2xl">{van.name}</h3>
+                <p className="font-bold">
                     ${van.price}
                     <span className="text-sm">/day</span>
                 </p>
@@ -28,9 +28,9 @@ export default function Vans() {
                 className={`
                     inline-block
                     mt-2
-                    px-[14px]
-                    py-[7px]
-                    h-[34px]
+                    p-3
+                    w-30
+                    text-center
                     rounded-[5px]
                     text-[#FFEAD0]
                     font-medium
@@ -47,8 +47,10 @@ export default function Vans() {
     ))
 
     return (
-        <div className="px-[23px]">
+        <div className="">
+            <h1 className=" font-bold text-5xl" >Explore our van options</h1>
             <div className="grid grid-cols-2 justify-items-center gap-[34px] mt-[57px]">
+                
                 {vanElements}
             </div>
         </div>
