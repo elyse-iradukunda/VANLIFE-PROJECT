@@ -9,7 +9,7 @@ export default function HostLayout() {
   return (
     <>
       <nav className="flex gap-10">
-        <NavLink to="/host" className={linkClass}>
+        <NavLink end={true} to="/host" className={linkClass}>
           Dashboard
         </NavLink>
 
@@ -17,6 +17,11 @@ export default function HostLayout() {
           Income
         </NavLink>
 
+        <NavLink to="/host/reviews" className={linkClass}>
+          Reviews
+        </NavLink>
+
+        
         <NavLink to="/host/reviews" className={linkClass}>
           Reviews
         </NavLink>
