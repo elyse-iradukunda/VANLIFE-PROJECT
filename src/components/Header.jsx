@@ -9,9 +9,14 @@ export default function Header(){
                  #VANLIFE
                </Link>
                <div className="flex gap-6 font-semibold text-[#4D4D4D]">
+                 <Link className="underline decoration-2 underline-offset-4 text-black" to="/host">
+                   Host
+                 </Link>
+
                  <Link className="underline decoration-2 underline-offset-4 text-black" to="/about">
                    About
                  </Link>
+
                  <Link className="hover:text-black transition-colors" to="/vans">
                    Vans
                  </Link>
