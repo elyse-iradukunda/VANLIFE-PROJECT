@@ -11,6 +11,7 @@ import Layout from './components/Layout'
 import Dashboard from './Host/Dashboard'
 import Income from './Host/Income'
 import Reviews from './Host/Reviews'
+import HostLayout from './components/HostLayout'
 
 function App() {
   return (
@@ -23,12 +24,17 @@ function App() {
                }>
 
                     <Route path='/about' element={<Content/>} />
-                    <Route path="/home" element={<Home/>} />
+                    <Route path="/" element={<Home/>} />
                     <Route path="/vans" element ={<Vans/>} />
                     <Route path="/vans/:id" element ={<VanDetail/>} />
-                    <Route path="/host" element ={ <Dashboard/>} />
-                    <Route path="/host/income" element ={ <Income/>} />
-                    <Route path="/host/reviews" element ={ <Reviews/>} />
+
+
+                    <Route path="host" element ={ <HostLayout />} >
+                       <Route index element ={ <Dashboard/>} />
+                       <Route path="income" element ={ <Income/>} />
+                       <Route path="reviews" element ={ <Reviews/>} />
+                    </Route>
+
                </Route>
 
               </Routes>

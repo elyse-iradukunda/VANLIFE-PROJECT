@@ -5,7 +5,7 @@ export default function Header(){
    <>
    
              <nav className="flex justify-between items-center px-6 py-8 md:px-10">
-               <Link className="font-black text-2xl tracking-tighter" to="/home">
+               <Link className="font-black text-2xl tracking-tighter" to="/">
                  #VANLIFE
                </Link>
                <div className="flex gap-6 font-semibold text-[#4D4D4D]">
