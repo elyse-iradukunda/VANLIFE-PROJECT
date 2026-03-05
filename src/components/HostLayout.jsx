@@ -1,25 +1,28 @@
-import { Link, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom"
 
 export default function HostLayout() {
+  const linkClass = ({ isActive }) =>
+    isActive
+      ? "font-bold underline text-[#161616] py-[5px] px-5"
+      : "no-underline text-[#4D4D4D] font-medium py-[5px] px-5 hover:text-[#161616] hover:underline hover:font-semibold"
+
   return (
+    <>
+      <nav className="flex gap-10">
+        <NavLink to="/host" className={linkClass}>
+          Dashboard
+        </NavLink>
 
-   <> 
-    <nav className="flex gap-10">
-      <Link className="no-underline text-[#4D4D4D] font-medium py-[5px] px-5 hover:text-[#161616] hover:underline hover:font-semibold" to="/host">
-        Dashboard
-      </Link>
+        <NavLink to="/host/income" className={linkClass}>
+          Income
+        </NavLink>
 
-      <Link className="no-underline text-[#4D4D4D] font-medium py-[5px] px-5 hover:text-[#161616] hover:underline hover:font-semibold" to="/host/income">
-        Income
-      </Link>
+        <NavLink to="/host/reviews" className={linkClass}>
+          Reviews
+        </NavLink>
+      </nav>
 
-      <Link className="no-underline text-[#4D4D4D] font-medium py-[5px] px-5 hover:text-[#161616] hover:underline hover:font-semibold" to="/host/reviews">
-        Reviews
-      </Link>
-    </nav>
-
-    <Outlet/>
-
- </>
+      <Outlet />
+    </>
   )
 }

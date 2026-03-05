@@ -19,14 +19,15 @@ function App() {
        <Header/>
              <Routes>
 
-               <Route element ={
-                <Layout/>
-               }>
 
+               <Route path='/' element ={<Layout/>}>
+                    <Route index element={<Home/>} />
                     <Route path='/about' element={<Content/>} />
-                    <Route path="/" element={<Home/>} />
-                    <Route path="/vans" element ={<Vans/>} />
-                    <Route path="/vans/:id" element ={<VanDetail/>} />
+
+                   <Route path="/vans">
+                    <Route index element ={<Vans/>} />
+                    <Route path=":id" element ={<VanDetail/>} />
+                  </Route> 
 
 
                     <Route path="host" element ={ <HostLayout />} >

@@ -1,31 +1,46 @@
-import { Link } from 'react-router-dom'
-export default function Header(){
+import { NavLink } from 'react-router-dom'
 
-    return(
-   <>
-   
-             <nav className="flex justify-between items-center px-6 py-8 md:px-10">
-               <Link className="font-black text-2xl tracking-tighter" to="/">
-                 #VANLIFE
-               </Link>
-               <div className="flex gap-6 font-semibold text-[#4D4D4D]">
-                 <Link className="underline decoration-2 underline-offset-4 text-black" to="/host">
-                   Host
-                 </Link>
+export default function Header() {
+  return (
+    <nav className="flex justify-between items-center px-6 py-8 md:px-10">
+      <NavLink className="font-black text-2xl tracking-tighter" to="/">
+        #VANLIFE
+      </NavLink>
 
-                 <Link className="underline decoration-2 underline-offset-4 text-black" to="/about">
-                   About
-                 </Link>
+      <div className="flex gap-6 font-semibold text-[#4D4D4D]">
+        <NavLink
+          to="/host"
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold underline text-[#161616]"
+              : "hover:text-[#161616] transition-colors"
+          }
+        >
+          Host
+        </NavLink>
 
-                 <Link className="hover:text-black transition-colors" to="/vans">
-                   Vans
-                 </Link>
-               </div>
-             </nav>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold underline text-[#161616]"
+              : "hover:text-[#161616] transition-colors"
+          }
+        >
+          About
+        </NavLink>
 
-        
-   
-   </>
-
-    )
+        <NavLink
+          to="/vans"
+          className={({ isActive }) =>
+            isActive
+              ? "font-bold underline text-[#161616]"
+              : "hover:text-[#161616] transition-colors"
+          }
+        >
+          Vans
+        </NavLink>
+      </div>
+    </nav>
+  )
 }
