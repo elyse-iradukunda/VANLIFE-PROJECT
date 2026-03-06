@@ -13,16 +13,16 @@ export default function HostLayout() {
           Dashboard
         </NavLink>
 
-        <NavLink to="/host/income" className={linkClass}>
+        <NavLink to="income" className={linkClass}>
           Income
         </NavLink>
 
-        <NavLink to="/host/vans" className={linkClass}>
+        <NavLink to="vans" className={linkClass}>
           Vans
         </NavLink>
 
         
-        <NavLink to="/host/reviews" className={linkClass}>
+        <NavLink to="reviews" className={linkClass}>
           Reviews
         </NavLink>
       </nav>
