@@ -12,7 +12,7 @@ export default function HostVans() {
 
   const hostVansEls = vans.map(van => (
     <Link
-      to={`/host/vans/${van.id}`}
+      to={van.id}
       key={van.id}
       className="no-underline text-inherit"
     >
@@ -43,6 +43,8 @@ export default function HostVans() {
       <div className="px-[26px]">
         {vans.length > 0 ? (
           <section>
+
+            
             {hostVansEls}
           </section>
         ) : (
