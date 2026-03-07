@@ -9,7 +9,9 @@ export default function HostLayout() {
   return (
     <>
       <nav className="flex gap-10">
-        <NavLink end={true} to="/host" className={linkClass}>
+
+        
+        <NavLink end={true} to="."  className={linkClass}>
           Dashboard
         </NavLink>
 

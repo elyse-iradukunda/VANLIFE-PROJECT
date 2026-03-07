@@ -14,42 +14,40 @@ import Reviews from './Host/Reviews'
 import HostLayout from './components/HostLayout'
 import HostVans from './Host/HostVans'
 import HostVansDetails from './Host/HostVansDetails'
+import HostVanInfo from './Host/HostVanInfo'
+import HostVanPricing from './Host/HostVanPricing'
+import HostVanPhotos from './Host/HostVanPhotos'
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#FFF7ED] font-sans">
-       <Header/>
-             <Routes>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='about' element={<Content />} />
 
+          <Route path="vans">
+            <Route index element={<Vans />} />
+            <Route path=":id" element={<VanDetail />} />
+          </Route>
 
-               <Route path='/' element ={<Layout/>}>
-                    <Route index element={<Home/>} />
-                    <Route path='/about' element={<Content/>} />
+          <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="income" element={<Income />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<HostVans />} />
+            <Route path="vans/:id" element={<HostVansDetails />}>
+              <Route index element={<HostVanInfo/>} />
+              <Route path='pricing' element={<HostVanPricing/>} />
+              <Route  path="photos" element={<HostVanPhotos/>} />
+            </Route>
+          </Route>
 
-                   <Route path="/vans">
-                    <Route index element ={<Vans/>} />
-                    <Route path=":id" element ={<VanDetail/>} />
-                  </Route> 
-
-
-                    <Route path="host" element ={ <HostLayout />} >
-                       <Route index element ={ <Dashboard/>} />
-                       <Route path="income" element ={ <Income/>} />
-                       <Route path="reviews" element ={ <Reviews/>} />
-                       <Route path="vans" element ={ <HostVans/>} />
-                       <Route path="vans/:id" element ={ <HostVans/>} />
-                    </Route>
-
-               </Route>
-
-              </Routes>
-              <br />
-        <Footer/>
+        </Route>
+      </Routes>
+      <Footer />
     </div>
-
-
-
-
   )
 }
 
