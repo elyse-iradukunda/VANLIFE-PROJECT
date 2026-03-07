@@ -7,14 +7,20 @@ export default function Vans() {
 
     const typeFilter= searchParams.get("type")
 
-
+ 
     useEffect(() => {
         fetch("/api/vans")
             .then(res => res.json())
             .then(data => setVans(data.vans))
     }, [])
 
-    const vanElements = vans.map(van => (
+
+
+const displayedVans = typeFilter
+   ? vans.filter(van => van.type === typeFilter)
+   : vans
+
+const vanElements = displayedVans.map(van => (
         <div key={van.id} className="text-[#161616]">
             <Link to={`/vans/${van.id}`}
               
@@ -62,6 +68,35 @@ export default function Vans() {
     return (
         <div className="">
             <h1 className=" font-bold text-5xl" >Explore our van options</h1>
+<div className="flex gap-4 mt-6">
+    <Link 
+        to="?type=simple"
+        className="bg-[#E17654] text-white px-4 py-2 rounded-md font-medium"
+    >
+        Simple
+    </Link>
+
+    <Link 
+        to="?type=luxury"
+        className="bg-[#161616] text-white px-4 py-2 rounded-md font-medium"
+    >
+        Luxury
+    </Link>
+
+    <Link 
+        to="?type=rugged"
+        className="bg-[#115E59] text-white px-4 py-2 rounded-md font-medium"
+    >
+        Rugged
+    </Link>
+
+    <Link 
+        to="."
+        className="underline font-medium text-gray-700 ml-4"
+    >
+        Clear filter
+    </Link>
+</div>
             <div className="grid grid-cols-2 justify-items-center gap-[34px] mt-[57px]">
                 
                 {vanElements}
