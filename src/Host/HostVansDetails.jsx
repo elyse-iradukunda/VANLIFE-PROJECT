@@ -54,7 +54,7 @@ export default function HostVanDetail() {
             </div>
 
 
-          <Outlet/>   
+          <Outlet context={{currentVan}}/>   
              
              <nav className="flex gap-6 my-7">
     <NavLink
