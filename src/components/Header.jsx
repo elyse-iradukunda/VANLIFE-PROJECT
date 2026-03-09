@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -7,7 +7,7 @@ export default function Header() {
         #VANLIFE
       </NavLink>
 
-      <div className="flex gap-6 font-semibold text-[#4D4D4D]">
+      <div className="flex items-center gap-6 font-semibold text-[#4D4D4D]">
         <NavLink
           to="/host"
           className={({ isActive }) =>
@@ -40,6 +40,13 @@ export default function Header() {
         >
           Vans
         </NavLink>
+
+        <Link to="login">
+          <img
+            src="/avatar.png"
+            className="w-8 h-8 rounded-full object-cover hover:scale-105 transition"
+          />
+        </Link>
       </div>
     </nav>
   )

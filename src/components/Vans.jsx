@@ -1,18 +1,21 @@
-import { useEffect, useState } from "react"
-import { Link, useSearchParams, useLocation } from "react-router-dom"
+import { useState } from "react"
+import { Link, useSearchParams, useLocation,useLoaderData } from "react-router-dom"
+import { getVans } from "../api"
+
+
+
+export function loader() {
+    return getVans()
+}
+
 
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
-    const [vans, setVans] = useState([])
     const location = useLocation()
-
+       const [error,setError] = useState(null);
+    const vans = useLoaderData()
+ 
     const typeFilter = searchParams.get("type")
-
-    useEffect(() => {
-        fetch("/api/vans")
-            .then(res => res.json())
-            .then(data => setVans(data.vans))
-    }, [])
 
     const displayedVans = typeFilter
         ? vans.filter(van => van.type === typeFilter)
@@ -58,7 +61,7 @@ export default function Vans() {
 
     return (
         <div>
-            <h1 className="font-bold text-5xl">Explore our van options</h1>
+            <h1 className="font-bold text-5xl" aria-live="assertive">Explore our van options</h1>
 
             <div className="flex gap-4 mt-6">
                 <button
